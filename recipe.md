@@ -17,11 +17,11 @@ I want to send a message to any user aged 16 or older to say that access has bee
 ## 2 Function Signature
 ```python
 import datetime, dateutil
-def age_verification(age):
-    # age => 16, access granted
-    # age < 16, tell them thier age, access denied
+def age_verification(dob):
+    # D.O.B => 16, access granted
+    # D.O.B < 16, tell them thier age, access denied
 	#parameters
-	# - age, string. dashes between date month and year.
+	# - D.O.B, string. dashes between date month and year.
 	# returns
 	# - string, access granted or denied.
 	#side effects
@@ -33,17 +33,21 @@ def age_verification(age):
 ## Examples
 ```python
 """
-Given that i 
+Given that I have a person with a birthday, person will have their age displayed
+"""
+def test_date_of_birth_is_date_type():
+	assert date_of_birth == 2010-05-15
 
 """
+Given that I have a date of birth that makes me below the age of 16, it will tell me the age and the age requirement, and deny me access
+"""
+def test_underaged_denied_access():
+	assert result == "You are 12, you have to be 16, access denied!"
 
 """
-
+Given that I have a date of birth that makes me 16 or above, it will grant me access
 """
-
-"""
-
-"""
-
+def test_16_or_over_acess_granted():
+	assert result == "Access Granted!"
 
 ```
